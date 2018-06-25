@@ -31,6 +31,6 @@ esac
 
 [ "${cmdVersion}" -eq 1 ] && echo "OpenSSL : $(openssl version)"
 
-[ "${cmdEncryptFile}" -eq 1 ] && openssl enc -aes-256-cbc -in ${@[2]} -out ${@[3]}
+[ "${cmdEncryptFile}" -eq 1 ] && openssl enc -aes-256-cbc -in ${2} -out ${3}
 
-[ "${cmdDecryptFile}" -eq 1 ] && openssl enc -aes-256-cbc -d -in ${@[2]} > ${@[3]}
+[ "${cmdDecryptFile}" -eq 1 ] && openssl enc -aes-256-cbc -d -in ${2} > ${3}
