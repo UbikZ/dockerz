@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-cd /home/workspace/node
+cd /home/workspace/java
 
 function usage() {
-    readonly nodeVersion=$(node -v)
-    readonly npmVersion=
     echo "  usage: ujava [java] [javac] [mvn]"
     echo ""
     echo "         java     execute java."

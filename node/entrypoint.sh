@@ -3,8 +3,6 @@
 cd /home/workspace/node
 
 function usage() {
-    readonly nodeVersion=$(node -v)
-    readonly npmVersion=
     echo "  usage: unode [node] [npm] [yarn]"
     echo ""
     echo "         node     execute node."
