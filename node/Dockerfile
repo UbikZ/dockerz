@@ -13,4 +13,4 @@ RUN mkdir -p ${UHOME}/vim
 
 WORKDIR ${UHOME}
 
-ENTRYPOINT ["sh", "/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["bash", "/usr/local/bin/entrypoint.sh"]
