@@ -14,7 +14,7 @@ function usage() {
 }
 
 # No param
-[ "$1" == "" ] && usage
+[ -z "$1" ] && usage
 
 cmdVersion=0
 
