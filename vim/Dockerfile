@@ -1,4 +1,3 @@
-
 FROM alpine:latest
 MAINTAINER Gabriel Malet <gabrielmalet@gmail.com>
 
@@ -19,12 +18,32 @@ RUN apk --no-cache add \
     && sh ${VRUNTIME}/install_awesome_vimrc.sh \
     && apk del curl
 
+# YouCompleteMe
+RUN apk add cmake \
+    python-dev \
+    && git clone --depth 1  https://github.com/Valloric/YouCompleteMe ${VRUNTIME}/YouCompleteMe/ \
+    && cd ${VRUNTIME}/YouCompleteMe \
+    && git submodule update --init --recursive \
+    && ${VRUNTIME}/YouCompleteMe/install.py --gocode-completer
+
 # Plugins
 RUN cd ${VRUNTIME} \
-    && git clone --depth 1 https://github.com/pangloss/vim-javascript
+    && git clone --depth 1 https://github.com/pangloss/vim-javascript &
 
-# Clean base
-RUN rm -rf /var/cache/apk/*
+# Cleanup
+RUN apk del build-deps \
+    && apk add \
+    libxt \
+    libx11 \
+    libstdc++ \
+    && rm -rf \
+    ${VRUNTIME}/YouCompleteMe/third_party/ycmd/clang_includes \
+    ${VRUNTIME}/YouCompleteMe/third_party/ycmd/cpp \
+    /usr/lib/go \
+    /var/cache/* \
+    /var/log/* \
+    /var/tmp/* \
+    && mkdir /var/cache/apk
 
 COPY my_configs.vim ${VRUNTIME}
 COPY entrypoint.sh /usr/local/bin/
