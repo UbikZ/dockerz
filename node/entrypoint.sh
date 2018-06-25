@@ -16,19 +16,15 @@ function usage() {
 # No param
 [ -z "$1" ] && usage
 
-cmdVersion=0
-
 case "$1" in
     node) node ${@:2} ;;
     npm) npm ${@:2} ;;
     yarn) yarn ${@:2} ;;
-    -v) cmdVersion=1 ;;
+    -v) (
+        echo "NodeJS : $(node -v)"
+        echo "NPM : $(npm -v)"
+        echo "Yarn : $(yarn -v)"
+    ) ;;
     -h) usage ;;
     *) usage ;;
 esac
-
-[ "${cmdVersion}" -eq 1 ] && (
-    echo "NodeJS : $(node -v)"
-    echo "NPM : $(npm -v)"
-    echo "Yarn : $(yarn -v)"
-)

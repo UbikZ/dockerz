@@ -16,19 +16,15 @@ function usage() {
 # No param
 [ -z "$1" ] && usage
 
-cmdVersion=0
-
 case "$1" in
     java) java ${@:2} ;;
     javac) javac ${@:2} ;;
     mvn) mvn ${@:2} ;;
-    -v) cmdVersion=1 ;;
+    -v) (
+        echo "Java : $(java -version)"
+        echo "Javac : $(javac -version)"
+        echo "Maven : $(mvn -version)"
+    ) ;;
     -h) usage ;;
     *) usage ;;
 esac
-
-[ "${cmdVersion}" -eq 1 ] && (
-    echo "Java : $(java -version)"
-    echo "Javac : $(javac -version)"
-    echo "Maven : $(mvn -version)"
-)

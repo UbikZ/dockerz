@@ -1,4 +1,4 @@
-## Dockerized spf13-vim
+## DockerZ
 
 ### Install Local
 

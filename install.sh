@@ -11,6 +11,7 @@ cat >~/${bashDockerFile} <<EOL
     alias ujava='docker run -ti -v \$(pwd):/home/workspace/java -v ~/.m2:/root/.m2 --rm ubikz/java'
     alias uossl='docker run -ti -v \$(pwd):/home/workspace/openssl --rm ubikz/openssl'
     alias upy='docker run -ti -v \$(pwd):/home/workspace/python --rm ubikz/python'
+    alias uphp='docker run -ti -v \$(pwd):/home/workspace/php -p 8888:8888 --rm ubikz/php'
 EOL
 
 source ~/${bashDockerFile}
