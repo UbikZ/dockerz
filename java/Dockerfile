@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM maven:alpine
 MAINTAINER Gabriel Malet <gabrielmalet@gmail.com>
 
 ENV SHELL       /bin/bash
@@ -9,7 +9,7 @@ RUN apk --no-cache add bash
 
 COPY entrypoint.sh /usr/local/bin/
 
-RUN mkdir -p ${UHOME}/node
+RUN mkdir -p ${UHOME}/java
 
 WORKDIR ${UHOME}
 

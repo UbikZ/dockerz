@@ -7,7 +7,8 @@ readonly bashDockerFile=.bash_docker.sh
 
 cat >~/${bashDockerFile} <<EOL
     alias uvi='docker run -ti -v $(pwd):/home/workspace/vim --rm ubikz/vim'
-    alias unode='docker run -ti -v $(pwd):/home/workspace/node -v ~/.npmrc:/root/.npmrc --rm ubikz/node'
+    alias unode='docker run -ti -v $(pwd):/home/workspace/node -v ~/.npmrc:/root/.npmrc:ro --rm ubikz/node --rm'
+    alias ujava='docker run -ti -v $(pwd):/home/workspace/java -v ~/.m2:/root/.m2:ro --rm ubikz/node --rm'
 EOL
 
 source ~/${bashDockerFile}
