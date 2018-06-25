@@ -9,6 +9,7 @@ cat >~/${bashDockerFile} <<EOL
     alias uvi='docker run -ti -v \$(pwd):/home/workspace/vim --rm ubikz/vim'
     alias unode='docker run -ti -v \$(pwd):/home/workspace/node -v ~/.npmrc:/root/.npmrc:ro --rm ubikz/node'
     alias ujava='docker run -ti -v \$(pwd):/home/workspace/java -v ~/.m2:/root/.m2 --rm ubikz/java'
+    alias uossl='docker run -ti -v \$(pwd):/home/workspace/openssl --rm ubikz/uossl'
 EOL
 
 source ~/${bashDockerFile}

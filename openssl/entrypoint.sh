@@ -21,7 +21,7 @@ cmdEncryptFile=0
 cmdDecryptFile=0
 
 case "$1" in
-    node) openssl ${@:2} ;;
+    openssl) openssl ${@:2} ;;
     efile) cmdEncryptFile=1 ;;
     dfile) cmdDecryptFile=1 ;;
     -v) cmdVersion=1 ;;
