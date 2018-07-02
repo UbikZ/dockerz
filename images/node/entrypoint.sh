@@ -3,9 +3,8 @@
 cd /home/workspace/node
 
 function usage() {
-    echo "  usage: unode [node] [npm] [yarn]"
+    echo "  usage: node [npm] [yarn]"
     echo ""
-    echo "         node     execute node."
     echo "         npm      execute npm."
     echo "         yarn     execute yarn."
     echo "         -v       show versions."
@@ -13,11 +12,7 @@ function usage() {
     exit 1
 }
 
-# No param
-[ -z "$1" ] && usage
-
 case "$1" in
-    node) node ${@:2} ;;
     npm) npm ${@:2} ;;
     yarn) yarn ${@:2} ;;
     -v) (
@@ -26,5 +21,5 @@ case "$1" in
         echo "Yarn : $(yarn -v)"
     ) ;;
     -h) usage ;;
-    *) usage ;;
+    *) node ${@:2} ;;
 esac
