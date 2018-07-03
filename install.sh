@@ -13,6 +13,8 @@ cat >~/${bashDockerFile} <<EOL
     alias node='docker run -ti -v \$(pwd):/home/workspace/node -v ~/.npmrc:/root/.npmrc:ro --rm ubikz/node'
     alias npm='node npm'
     alias yarn='node yarn'
+    alias rollup='node rollup'
+    alias webpack-cli='node webpack-cli';
 
     alias java='docker run -ti -v \$(pwd):/home/workspace/java -v ~/.m2:/root/.m2 --rm ubikz/java'
     alias javac='java javac'
