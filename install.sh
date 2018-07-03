@@ -6,6 +6,8 @@ bashDockerFile=.bash_docker.sh
 [[ -z $(cat ${shrc} | grep "${bashDockerFile}") ]] && (echo "[ -f ~/${bashDockerFile} ] && source ~/${bashDockerFile}" >> "${shrc}")
 
 cat >~/${bashDockerFile} <<EOL
+    alias dpull='for img in "vi" "java" "openssl" "python" "php"; do docker pull ubikz/\${img}; done'
+
     alias uvi='docker run -ti -v \$(pwd):/home/workspace/vim --rm ubikz/vi'
 
     alias node='docker run -ti -v \$(pwd):/home/workspace/node -v ~/.npmrc:/root/.npmrc:ro --rm ubikz/node'
