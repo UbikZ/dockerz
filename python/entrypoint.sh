@@ -3,7 +3,7 @@
 cd /home/workspace/python
 
 function usage() {
-    echo "  usage: py [pip]"
+    echo "  usage: py <options>"
     echo ""
     echo "         pip  execute pip."
     echo "         -v   show versions."

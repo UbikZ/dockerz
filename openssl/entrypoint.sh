@@ -3,7 +3,7 @@
 cd /home/workspace/openssl
 
 function usage() {
-    echo "  usage: ossl [efile] [dfile]"
+    echo "  usage: ossl <options>"
     echo ""
     echo "         efile <infile> <outfile>     encrypt file."
     echo "         dfile <infile> <outfile>     decrypt file."

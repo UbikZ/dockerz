@@ -3,7 +3,7 @@
 cd /home/workspace/java
 
 function usage() {
-    echo "  usage: java [javac] [mvn]"
+    echo "  usage: java <options>"
     echo ""
     echo "         javac    execute javac."
     echo "         mvn      execute mvn."
@@ -16,9 +16,7 @@ function usage() {
 [ -z "$1" ] && usage
 
 case "$1" in
-    java) java ${@:2} ;;
-    javac) javac ${@:2} ;;
-    mvn) mvn ${@:2} ;;
+    java|javac|mvn) $1 ${@:2} ;;
     -v) (
         echo "Java : $(java -version)"
         echo "Javac : $(javac -version)"

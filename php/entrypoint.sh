@@ -3,7 +3,7 @@
 cd /home/workspace/php
 
 function usage() {
-    echo "  usage: php [composer] [serve]"
+    echo "  usage: php <options>"
     echo ""
     echo "         composer             execute composer."
     echo "         serve    <path>      server static en localhost:8080."
@@ -12,7 +12,7 @@ function usage() {
 }
 
 case "$1" in
-    composer) composer ${@:2} ;;
+    composer) $1 ${@:2} ;;
     serve) php -S localhost:8888 -t ${@:2} ;;
     -v) (
         echo "PHP : $(php -v)"

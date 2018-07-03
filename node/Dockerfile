@@ -12,6 +12,12 @@ COPY entrypoint.sh /usr/local/bin/
 
 RUN mkdir -p ${UHOME}/node
 
+RUN npm install -g \
+    webpack-cli \
+    rollup \
+    eslint
+
+
 WORKDIR ${UHOME}
 
 ENTRYPOINT ["bash", "/usr/local/bin/entrypoint.sh"]
