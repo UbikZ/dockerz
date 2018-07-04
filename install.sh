@@ -22,6 +22,7 @@ onEachPkgs() {
     local pkgs=(
         'vi' \
         'ffmpeg' \
+        'convert' \
         'node=-v ~/.npmrc:/root/.npmrc:ro' \
         'java=-v ~/.m2:/root/.m2' \
         'openssl' \

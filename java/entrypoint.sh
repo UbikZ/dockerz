@@ -12,9 +12,6 @@ function usage() {
     exit 1
 }
 
-# No param
-[ -z "$1" ] && usage
-
 case "$1" in
     java|javac|mvn) $1 ${@:2} ;;
     -v) (
