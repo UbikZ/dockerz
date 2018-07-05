@@ -20,7 +20,7 @@ echo "Create reference of ${bashDockerFile} within ${cmdShFile}"
 
 onEachPkgs() {
     local pkgs=(
-        'vi' \
+#        'vi' \
         'ffmpeg' \
         'convert' \
         'node=-v ~/.npmrc:/root/.npmrc:ro' \
@@ -55,15 +55,15 @@ cat >>~/${bashDockerFile} <<EOL
     function docker-rm { docker ps -aq | xargs docker rm -f; }
     function docker-ssh { docker exec -ti \$1 /bin/sh; }
     function dpull { for img in "vi" "java" "openssl" "python" "php"; do docker pull ubikz/\${img} 1>/dev/null; done; }
-    function npm { node npm; }
-    function yarn { node yarn; }
-    function rollup { node rollup; }
-    function webpack-cli { node webpack-cli; };
-    function javac { java javac; }
-    function mvn { java mvn; }
-    function python { py; }
-    function pip { py pip; }
-    function composer { php composer; }
+    function npm { node npm \$@; }
+    function yarn { node yarn \$@; }
+    function rollup { node rollup \$@; }
+    function webpack-cli { node webpack-cli \$@; };
+    function javac { java javac \$@; }
+    function mvn { java mvn \$@; }
+    function python { py \$@; }
+    function pip { py pip \$@; }
+    function composer { php composer \$@; }
 EOL
 
 if [ ${cmdBuild} -eq 1 ]; then

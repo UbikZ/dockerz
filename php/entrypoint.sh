@@ -12,11 +12,11 @@ function usage() {
 }
 
 case "$1" in
-    composer) $1 ${@:2} ;;
-    serve) php -S localhost:8888 -t ${@:2} ;;
+    composer) $1 "${@:2}" ;;
+    serve) php -S localhost:8888 -t "${@:2}" ;;
     -v) (
         echo "PHP : $(php -v)"
         echo "composer : $(composer --version)"
     ) ;;
-    *) php ${@:2} ;;
+    *) php "${@:2}" ;;
 esac

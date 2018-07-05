@@ -15,5 +15,5 @@ case "$1" in
         echo "imageMagick : $(convert -version)"
     ) ;;
     -h) usage ;;
-    *) convert ${@:2} ;;
+    *) convert "${@:2}" ;;
 esac

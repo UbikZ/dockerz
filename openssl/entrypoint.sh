@@ -13,9 +13,9 @@ function usage() {
 }
 
 case "$1" in
-    efile) openssl enc -aes-256-cbc -in ${2} -out ${3} ;;
-    dfile) openssl enc -aes-256-cbc -d -in ${2} > ${3} ;;
+    efile) openssl enc -aes-256-cbc -in "${2}" -out "${3}" ;;
+    dfile) openssl enc -aes-256-cbc -d -in "${2}" > "${3}" ;;
     -v) echo "OpenSSL : $(openssl version)" ;;
     -h) usage ;;
-    *) openssl ${@:2} ;;
+    *) openssl "${@:2}" ;;
 esac

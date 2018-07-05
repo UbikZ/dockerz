@@ -13,12 +13,12 @@ function usage() {
 }
 
 case "$1" in
-    java|javac|mvn) $1 ${@:2} ;;
+    java|javac|mvn) $1 "${@:2}" ;;
     -v) (
         echo "Java : $(java -version)"
         echo "Javac : $(javac -version)"
         echo "Maven : $(mvn -version)"
     ) ;;
     -h) usage ;;
-    *) java ${@:2} ;;
+    *) java "${@:2}" ;;
 esac

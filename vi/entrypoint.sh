@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cd /home/workspace/vi && vim $@
+cd /home/workspace/vi && vim "$@"
