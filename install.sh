@@ -50,11 +50,13 @@ dockerBuild() {
 
 onEachPkgs addEntryInBashDockerFile
 
-cat >>~/${bashDockerFile} <<EOL
+cat >>~/${bashDockerFile} <<SHEOF
     function docker-rmi { docker images -aq -f "dangling=true" | xargs docker rmi; }
     function docker-rm { docker ps -aq | xargs docker rm -f; }
     function docker-ssh { docker exec -ti \$1 /bin/sh; }
+
     function dpull { for img in "vi" "java" "openssl" "python" "php"; do docker pull ubikz/\${img} 1>/dev/null; done; }
+
     function npm { node npm \$@; }
     function yarn { node yarn \$@; }
     function rollup { node rollup \$@; }
@@ -64,7 +66,7 @@ cat >>~/${bashDockerFile} <<EOL
     function python { py \$@; }
     function pip { py pip \$@; }
     function composer { php composer \$@; }
-EOL
+SHEOF
 
 if [ ${cmdBuild} -eq 1 ]; then
     source ~/${bashDockerFile}
