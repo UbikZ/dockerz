@@ -1,10 +1,10 @@
 ## DockerZ
 
-### Install Local (w/ zsh)
+### Install Local (w/ ~/.zshrc)
 
-`bash ./install.sh ~/.zshrc`
+`./install.sh -b && source ~/.bash_docker.sh`
 
-### Install Remote (w/ zsh)
+### Install Remote (w/ ~/.zshrc)
 
-`bash <(curl -sL https://raw.githubusercontent.com/UbikZ/dockerz/master/install.sh) ~/.zshrc`
+`bash <(curl -sL https://raw.githubusercontent.com/UbikZ/dockerz/master/install.sh) && source ~/.bash_docker.sh`
 

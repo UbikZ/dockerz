@@ -17,7 +17,7 @@ function usage() {
 
 case "$1" in
     npm|yarn|rollup|webpack-cli) $1 "${@:2}" ;;
-    -v) (
+    -v)
         echo "NodeJS : $(node -v)"
         echo "NPM : $(npm -v)"
         echo "Yarn : $(yarn -v)"
@@ -25,7 +25,7 @@ case "$1" in
         echo "Rollup : $(rollup -v)"
         echo "Webpack : $(webpack-cli -v)"
 
-    ) ;;
+    ;;
     -h) usage ;;
-    *) node "${@:2}" ;;
+    *) node "${@:1}" ;;
 esac

@@ -13,10 +13,10 @@ function usage() {
 
 case "$1" in
     pip) pip "${@:2}" ;;
-    -v) (
+    -v)
         echo "Python : $(python --version)"
         echo "Pip : $(pip --version)"
-    ) ;;
+    ;;
     -h) usage ;;
-    *) python "${@:2}" ;;
+    *) python "${@:1}" ;;
 esac
